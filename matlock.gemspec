@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency('rake', '~> 10.0.3')
   s.add_development_dependency('minitest', '~> 4.3.3')
   s.add_development_dependency('mocha', '~> 0.13.1')
+  s.add_development_dependency('unindentable', '~> 0.1.0')
 
   s.test_files   = Dir.glob("test/**/*")
   s.files        = Dir.glob("lib/**/*") + %w(README.md)

@@ -28,6 +28,10 @@ class Matlock
     #
     ############################################################################
 
+    ####################################
+    # Data Load
+    ####################################
+
     # Loads all data from the data files.
     def self.load()
       # Determine path to the data files embedded in the gem.
@@ -53,12 +57,55 @@ class Matlock
       index = 1;
       
       File.open(filename, "r").each_line do |line|
+        next if line.chomp.length == 0
         lookup[line.chomp.upcase] = index
         index = index + 1
       end
       
       return lookup
     end
+
+
+    ####################################
+    # Name Recognition
+    ####################################
+    
+    # Determines if a string is a surname.
+    #
+    # @params str [String]  the string to check.
+    #
+    # @retruns [Boolean]  true if the string is a surname, otherwise false.
+    def self.surname?(str)
+      return !str.nil? && !surnames[str.upcase].nil?
+    end
+    
+    # Determines if a string is a first name.
+    #
+    # @params str [String]  the string to check.
+    #
+    # @retruns [Boolean]  true if the string is a first name, otherwise false.
+    def self.first_name?(str)
+      return !str.nil? && !first_names[str.upcase].nil?
+    end
+    
+    # Determines if a string is a male first name.
+    #
+    # @params str [String]  the string to check.
+    #
+    # @retruns [Boolean]  true if the string is a male first name, otherwise false.
+    def self.male_name?(str)
+      return !str.nil? && !male_names[str.upcase].nil?
+    end
+    
+    # Determines if a string is a female first name.
+    #
+    # @params str [String]  the string to check.
+    #
+    # @retruns [Boolean]  true if the string is a female first name, otherwise false.
+    def self.female_name?(str)
+      return !str.nil? && !female_names[str.upcase].nil?
+    end
+
   end
 end
 

@@ -6,14 +6,31 @@ class TestData < MiniTest::Unit::TestCase
   end
   
   ######################################
-  # Name Files
+  # Names
   ######################################
 
-  def test_name_file_countss
-    assert_equal 87646, Matlock::Data.surnames.length
-    assert_equal 5064, Matlock::Data.first_names.length
-    assert_equal 1183, Matlock::Data.male_names.length
-    assert_equal 4202, Matlock::Data.female_names.length
+  def test_is_surname
+    assert Matlock::Data.surname?("Johnson")
+    assert Matlock::Data.surname?("Smith")
+    assert !Matlock::Data.surname?("Crabapple")
+  end
+
+  def test_is_first_name
+    assert Matlock::Data.first_name?("Ben")
+    assert Matlock::Data.first_name?("Jennifer")
+    assert !Matlock::Data.first_name?("Smith")
+  end
+
+  def test_is_male_name
+    assert Matlock::Data.male_name?("John")
+    assert Matlock::Data.male_name?("Jacob")
+    assert !Matlock::Data.male_name?("Jennifer")
+  end
+
+  def test_is_female_name
+    assert Matlock::Data.female_name?("Jennifer")
+    assert Matlock::Data.female_name?("Susan")
+    assert !Matlock::Data.female_name?("Mike")
   end
 
   ######################################

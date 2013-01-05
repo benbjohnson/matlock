@@ -30,6 +30,7 @@ GEM
     unf (0.0.5)
       unf_ext
     unf_ext (0.0.5)
+    unindentable (0.1.0)
     webrobots (0.0.13)
 
 PLATFORMS
@@ -40,3 +41,4 @@ DEPENDENCIES
   minitest (~> 4.3.3)
   mocha (~> 0.13.1)
   rake (~> 10.0.3)
+  unindentable (~> 0.1.0)
