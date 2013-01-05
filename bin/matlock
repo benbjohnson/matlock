@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+$:.unshift(File.join(File.dirname(File.expand_path(__FILE__)), '..', 'lib'))
+
+require 'rubygems'
+require 'matlock'
+require 'commander/import'
+
+program :name, 'Matlock'
+program :version, Matlock::VERSION
+program :description, 'A simple entity extraction tool.'
+
+
+################################################################################
+# Source
+################################################################################
+
+command :names do |c|
+  c.syntax = 'grapevine names'
+  c.description = 'Extracts a list of names from text.'
+  c.option '--stopwords LIST', 'A list of words to ignore when extracting names.'
+  c.when_called do|args, options|
+    # Read in all of stdin
+    raise "No input available on standard input" if STDIN.tty?
+    str = STDIN.read
+    
+    # Parse options.
+    stopwords = (options.stopwords || '').split(/\b+/)
+    
+    # Extract the names from the text.
+    matlock = Matlock.new()
+    matlock.stopwords = stopwords
+    names = matlock.extract_names(str)
+    
+    # Print out one name per line.
+    names.each do |name|
+      puts name
+    end
+  end
+end

@@ -10,9 +10,12 @@ Gem::Specification.new do |s|
   s.email       = ["benbjohnson@yahoo.com"]
   s.homepage    = "http://github.com/benbjohnson/matlock"
   s.summary     = "An intelligent web scraper"
+  s.executables = ['matlock']
 
   s.add_dependency('mechanize', '~> 2.5.1')
-
+  s.add_dependency('commander', '~> 4.1.3')
+  s.add_dependency('active_support', '3.0.0')
+  
   s.add_development_dependency('rake', '~> 10.0.3')
   s.add_development_dependency('minitest', '~> 4.3.3')
   s.add_development_dependency('mocha', '~> 0.13.1')
