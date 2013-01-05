@@ -9,11 +9,11 @@ class TestData < MiniTest::Unit::TestCase
   # Name Files
   ######################################
 
-  def test_name_file_counts
-    #assert_equal 88798, Matlock::Data.surnames.length
-    #assert_equal 5163, Matlock::Data.first_names.length
-    #assert_equal 1219, Matlock::Data.male_names.length
-    #assert_equal 4275, Matlock::Data.female_names.length
+  def test_name_file_countss
+    assert_equal 87646, Matlock::Data.surnames.length
+    assert_equal 5064, Matlock::Data.first_names.length
+    assert_equal 1183, Matlock::Data.male_names.length
+    assert_equal 4202, Matlock::Data.female_names.length
   end
 
   ######################################
