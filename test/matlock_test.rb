@@ -27,4 +27,10 @@ class TestMatlock < MiniTest::Unit::TestCase
     names = @matlock.extract_names(html)
     assert_equal ["Delloreen Ennis-London"], names
   end
+
+  def test_name_underscored_names
+    html = "This name Wally_Bullingotn_Practice_Complex should not work."
+    names = @matlock.extract_names(html)
+    assert_equal [], names
+  end
 end

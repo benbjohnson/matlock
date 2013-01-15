@@ -47,7 +47,7 @@ class Matlock
     names = []
     
     # Split content into words.
-    words = content.split(/[^-a-z0-9]+/i).select {|v| v.index(/^[-a-z]+$/i)}
+    words = content.split(/[^-_a-z0-9]+/i).select {|v| v.index(/^[-a-z]+$/i)}
     
     # Loop over each bigram and check if the words are title cased and if at
     # least one of the words is a first or last name.
