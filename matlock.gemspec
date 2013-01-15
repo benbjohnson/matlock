@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Ben Johnson"]
   s.email       = ["benbjohnson@yahoo.com"]
   s.homepage    = "http://github.com/benbjohnson/matlock"
-  s.summary     = "An intelligent web scraper"
+  s.summary     = "Simple name extraction utility."
   s.executables = ['matlock']
 
   s.add_dependency('mechanize', '~> 2.5.1')

@@ -76,7 +76,13 @@ class Matlock
     #
     # @retruns [Boolean]  true if the string is a surname, otherwise false.
     def self.surname?(str)
-      return !str.nil? && !surnames[str.upcase].nil?
+      if !str.nil?
+        str.upcase.split(/\-+/).each do |name|
+          return true unless surnames[name].nil?
+        end
+      end
+
+      return false
     end
     
     # Determines if a string is a first name.

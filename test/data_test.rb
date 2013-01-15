@@ -12,6 +12,7 @@ class TestData < MiniTest::Unit::TestCase
   def test_is_surname
     assert Matlock::Data.surname?("Johnson")
     assert Matlock::Data.surname?("Smith")
+    assert Matlock::Data.surname?("Ennis-London")
     assert !Matlock::Data.surname?("Crabapple")
   end
 

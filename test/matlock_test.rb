@@ -9,7 +9,7 @@ class TestMatlock < MiniTest::Unit::TestCase
   # Extract Names
   ######################################
 
-  def test_extract_names
+  def test_simple_name_extraction
     html = <<-BLOCK
       <html>
         <body>
@@ -20,5 +20,11 @@ class TestMatlock < MiniTest::Unit::TestCase
     
     names = @matlock.extract_names(html)
     assert_equal ["Jeremy Wilson", "Jenny Smith"], names
+  end
+
+  def test_name_extraction_with_hyphenated_last_name
+    html = "My friend, Delloreen Ennis-London, is an awesome person."
+    names = @matlock.extract_names(html)
+    assert_equal ["Delloreen Ennis-London"], names
   end
 end
