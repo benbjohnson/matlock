@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency('mechanize', '~> 2.5.1')
   s.add_dependency('commander', '~> 4.1.3')
-  s.add_dependency('active_support', '3.0.0')
+  s.add_dependency('activesupport', '3.0.0')
   
   s.add_development_dependency('rake', '~> 10.0.3')
   s.add_development_dependency('minitest', '~> 4.3.3')
